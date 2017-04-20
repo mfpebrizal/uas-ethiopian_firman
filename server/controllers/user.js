@@ -3,20 +3,20 @@ var app = express.Router()
 var User = require('../models/user')
 let methods = {}
 
-methods.create = function (req,res) {
-  let user = new User({
-    name : req.body.name,
-    email : req.body.email,
-    password : req.body.password,
-    username : req.body.username,
-    _articles : []
-  })
-
-  user.save(function (err, response) {
-    if (err) res.json(err)
-    res.json(response)
-  })
-}
+// methods.create = function (req,res) {
+//   let user = new User({
+//     name : req.body.name,
+//     email : req.body.email,
+//     password : req.body.password,
+//     username : req.body.username,
+//     _articles : []
+//   })
+//
+//   user.save(function (err, response) {
+//     if (err) res.json(err)
+//     res.json(response)
+//   })
+// }
 
 methods.findAll = function (req,res) {
 
