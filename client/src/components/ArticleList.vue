@@ -11,7 +11,7 @@
           <p>{{article.content}}</p>
           <div class="block">
             <span class="wrapper">
-              <el-button size="small" icon="edit" type="info" @click="">Edit</el-button>
+              <el-button size="small" icon="edit" type="info"><router-link :to="'/edit/'+article._id">Edit</router-link></el-button>
               <el-button size="small" icon="delete" type="danger" @click="deleteOneArticle(article._id)">Delete</el-button>
             </span>
           </div>

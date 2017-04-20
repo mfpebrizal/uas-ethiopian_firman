@@ -13,7 +13,7 @@ export const store = new Vuex.Store ({
     articles : [],
     newArticle : {
       title : '',
-      content : '',
+      content : ''
     }
   },
   getters,

@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import MainPage from '@/components/MainPage'
 import ArticleForm from '@/components/ArticleForm'
 import ArticleList from '@/components/ArticleList'
+import EditArticle from '@/components/EditArticle'
 
 Vue.use(Router)
 
@@ -28,6 +29,12 @@ export default new Router({
       path: '/list',
       name: 'listArticle',
       component: ArticleList
+    },
+    {
+      path: '/edit/:id',
+      props: true,
+      name: 'EditArticle',
+      component: EditArticle
     }
   ]
 })
