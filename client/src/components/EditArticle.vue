@@ -1,9 +1,8 @@
 <template lang="html">
-  <div class="post Article">
-    <nav-bar></nav-bar>
+  <div class="edit Article">
     <el-row>
       <el-col :span="20" :offset="2">
-        <h1>Post Article</h1>
+        <h1>Edit Article</h1>
       </el-col>
 
       <el-col :span="20" :offset="2">
@@ -36,6 +35,7 @@ import {mapGetters} from 'vuex'
 import NavBar from './NavBar'
 
 export default {
+  props : ['id'],
   components : {
     NavBar
   },
@@ -53,6 +53,9 @@ export default {
       this.newArticle.title = ''
       this.newArticle.content = ''
     }
+  },
+  mounted(){
+    this.$store.dispatch('findEditArticle',this.id)
   }
 }
 </script>

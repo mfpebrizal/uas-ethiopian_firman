@@ -14,6 +14,10 @@ export const store = new Vuex.Store ({
     newArticle : {
       title : '',
       content : ''
+    },
+    editArticle : {
+      title : '',
+      content : ''
     }
   },
   getters,

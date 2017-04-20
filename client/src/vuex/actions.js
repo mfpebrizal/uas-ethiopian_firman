@@ -30,5 +30,14 @@ export default {
     .catch(function (error) {
       console.log(error);
     });
+  },
+  findEditArticle({commit}, data){
+    axios.get('http://localhost:3000/api/articles/'+ data)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 }
