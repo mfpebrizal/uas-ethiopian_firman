@@ -6,7 +6,7 @@ var passport = require('passport');
 
 var app = express()
 
-// const users = require('./routes/users');
+const users = require('./routes/users');
 // const users = require('./routes/users');
 
 app.use(morgan('dev'))
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors())
 
-// app.use('/api/users', users)
+app.use('/api/users', users)
 // app.use('/api/users', users)
 
 

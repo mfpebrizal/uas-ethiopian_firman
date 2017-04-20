@@ -5,7 +5,7 @@ require('../config/db')
 var articleSchema = new Schema({
   content : String,
   title : String,
-  author : {type : Schema.Types.ObjectId, ref: 'User'}
+  _author : {type : Schema.Types.ObjectId, ref: 'User'}
 },{
   timestamps : true
 })
