@@ -11,5 +11,9 @@ export default {
   succeedDelete(state, payload){
     const index = state.articles.findIndex(x => x == payload)
     state.articles.splice(index,1)
+  },
+  succeedSave(state, payload){
+    const index = state.articles.findIndex(x => x == payload)
+    state.articles.splice(index,1)
   }
 }

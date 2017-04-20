@@ -10,7 +10,11 @@ import mutations from './mutations'
 
 export const store = new Vuex.Store ({
   state : {
-    articles : []
+    articles : [],
+    newArticle : {
+      title : '',
+      content : '',
+    }
   },
   getters,
   actions,

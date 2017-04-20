@@ -1,13 +1,14 @@
 <template lang="html">
-  <div class="main-page">
+  <div class="all-article">
     <nav-bar></nav-bar>
     <el-row>
       <el-col :span="20" :offset="2">
         <h1>All Articles</h1>
-
+      </el-col>
+      <el-col :span="20" :offset="2">
         <div v-for="article in articles" class="all-Articles">
-          <h2>{{article.title}}</h2>
-          {{article.content}}
+          <h3>{{article.title}}</h3>
+          <p>{{article.content}}</p>
           <div class="block">
             <span class="wrapper">
               <el-button size="small" icon="edit" type="info" @click="">Edit</el-button>
