@@ -1,6 +1,5 @@
 export default {
   insertArticle(state, payload){
-    // console.log(state);
     state.articles.splice(0,state.articles.length)
 
     payload.forEach(x => {
@@ -8,5 +7,9 @@ export default {
       x.createdAt = date.toLocaleString()
       state.articles.push(x)
     })
+  },
+  succeedDelete(state, payload){
+    const index = state.articles.findIndex(x => x == payload)
+    state.articles.splice(index,1)
   }
 }

@@ -7,5 +7,15 @@ export default {
     .catch(function (error) {
       console.log(error);
     });
+  },
+  deleteArticle({commit}, articleId){
+
+    axios.delete('http://localhost:3000/api/articles/'+articleId)
+    .then(function (response) {
+      commit('succeedDelete', articleId)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 }
