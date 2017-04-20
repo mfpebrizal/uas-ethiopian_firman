@@ -21,7 +21,7 @@ methods.create = function (req,res) {
               if (err) {res.json(err) }
               else{ res.json(result) }
             }
-          )
+      )
     }
   })
 }
@@ -45,7 +45,7 @@ methods.findById = function (req,res) {
     if (err) { res.json(err) }
     else {res.json(data)}
   })
-  
+
 }
 
 methods.update = function (req,res) {
@@ -63,7 +63,7 @@ methods.delete = function (req,res) {
     if (err) {
       res.json(err)
     }else{
-      res.json(result)
+      res.json(result)// menampilkan data yang di delete!
     }
   })
 }
