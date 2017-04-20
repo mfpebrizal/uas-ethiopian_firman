@@ -20,39 +20,23 @@ methods.create = function (req,res) {
 
 methods.findAll = function (req,res) {
 
-  User.find({}, function (err, result) {
-    if (err) {
-      res.json(err)
-    }else{
-      res.json(result)
-    }
+  User
+  .find({})
+  .populate('_articles')
+  .exec(function (err, data) {
+    if (err) { res.json(err) }
+    else {res.json(data)}
   })
-
-  // User
-  // .find({})
-  // .populate('articles')
-  // .exec(function (err, data) {
-  //   if (err) { res.json(err) }
-  //   else {res.json(data)}
-  // })
 }
 
 methods.findById = function (req,res) {
 
-  User.findById(req.params.id, function (err, result) {
-    if (err) {
-      res.json(err)
-    }else{
-      res.json(result)
-    }
+  User.findOne({ _id:req.params.id})
+  .populate('_articles')
+  .exec(function (err, data) {
+    if (err) { res.json(err) }
+    else {res.json(data)}
   })
-
-  // User.findOne({ _id:req.params.id})
-  // .populate('articles')
-  // .exec(function (err, data) {
-  //   if (err) { res.json(err) }
-  //   else {res.json(data)}
-  // })
 }
 
 methods.update = function (req,res) {
