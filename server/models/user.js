@@ -7,6 +7,7 @@ var userSchema = new Schema({
   username : String,
   email : String,
   password : String,
+  token : String,
   _articles : [{type : Schema.Types.ObjectId, ref: 'Article'}]
 },{
   timestamps : true

@@ -1,6 +1,6 @@
 const Strategy = require('passport-local').Strategy;
 const User = require('../models/user');
-
+const passwordHash = require('password-hash')
 
 module.exports = function (passport) {
   passport.use(new Strategy(
@@ -11,7 +11,7 @@ module.exports = function (passport) {
         if (!user) {
           cb(null, false)
         }else{
-          if (password === user.password) {
+          if (passwordHash.verify(password, user.password)) {
             cb(null, user)
           }else{
             cb(null, false)

@@ -34,20 +34,6 @@ methods.register = function (req,res,next) {
   })
 }
 
-// methods.login = function (req, res, next) {
-//
-//   let userToken = jwt.sign({username : req.user.email, id : req.user.id}, process.env.SECRET_FOR_JWT)
-//
-//   User.update({'_id' : req.user.id}, {$set : {token : userToken} }, function (err, result) {
-//     if (err) {
-//       res.json(err)
-//     }else{
-//       res.json(userToken)
-//     }
-//   })
-// }
-
-
 
 
 module.exports = methods
